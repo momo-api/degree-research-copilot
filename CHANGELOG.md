@@ -25,6 +25,7 @@ All notable changes to this project are documented here. The project follows sem
 ### Fixed
 
 - Stage validation no longer counts template Degree/Track/Initialized metadata as substantive intake content.
+- Profile-header synchronization and tests now preserve and accept Windows CRLF line endings.
 
 ### Validation
 

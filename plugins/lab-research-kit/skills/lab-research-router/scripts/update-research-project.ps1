@@ -123,9 +123,9 @@ foreach ($relative in $syncFiles) {
     $file = Join-Path $projectRoot $relative
     if (-not (Test-Path -LiteralPath $file -PathType Leaf)) { continue }
     $content = Get-Content -LiteralPath $file -Raw
-    $content = [regex]::Replace($content, '(?m)^- Degree:.*$', "- Degree: $($state.student.degree)")
-    $content = [regex]::Replace($content, '(?m)^- Track:.*$', "- Track: $($state.project.track)")
-    $content = [regex]::Replace($content, '(?m)^- Discipline:.*$', "- Discipline: $($state.project.discipline)")
+    $content = [regex]::Replace($content, '(?m)^- Degree:[^\r\n]*(?=\r?$)', "- Degree: $($state.student.degree)")
+    $content = [regex]::Replace($content, '(?m)^- Track:[^\r\n]*(?=\r?$)', "- Track: $($state.project.track)")
+    $content = [regex]::Replace($content, '(?m)^- Discipline:[^\r\n]*(?=\r?$)', "- Discipline: $($state.project.discipline)")
     if ($PSCmdlet.ShouldProcess($file, 'Synchronize generated profile header')) {
         [System.IO.File]::WriteAllText($file, $content, $utf8)
     }

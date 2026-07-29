@@ -226,9 +226,9 @@ try {
         & $updater -Path $path -Degree Master -Track Computational -Discipline '新学科' | Out-Null
         foreach ($relative in @('research\00-admin\research-brief.md', 'research\03-proposal\proposal-outline.md', 'research\04-experiments\design-brief.md', 'research\06-manuscript\manuscript.md')) {
             $text = Get-Content -LiteralPath (Join-Path $path $relative) -Raw
-            Assert-True ($text -match '(?m)^- Degree: Master$') "$relative has a stale degree header"
-            Assert-True ($text -match '(?m)^- Track: Computational$') "$relative has a stale track header"
-            Assert-True ($text -match '(?m)^- Discipline: 新学科$') "$relative has a stale discipline header"
+            Assert-True ($text -match '(?m)^- Degree: Master\r?$') "$relative has a stale degree header"
+            Assert-True ($text -match '(?m)^- Track: Computational\r?$') "$relative has a stale track header"
+            Assert-True ($text -match '(?m)^- Discipline: 新学科\r?$') "$relative has a stale discipline header"
         }
     }
 
