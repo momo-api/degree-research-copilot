@@ -1,0 +1,20 @@
+{
+  "name": "degree-research-copilot",
+  "interface": {
+    "displayName": "Degree Research Copilot"
+  },
+  "plugins": [
+    {
+      "name": "lab-research-kit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lab-research-kit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

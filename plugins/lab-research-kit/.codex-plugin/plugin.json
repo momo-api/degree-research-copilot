@@ -1,0 +1,37 @@
+{
+  "name": "lab-research-kit",
+  "version": "2.2.0",
+  "description": "A stateful, adaptive degree-research copilot for bachelor's, master's, and doctoral projects from intake through archive.",
+  "author": {
+    "name": "Laboratory Research Team"
+  },
+  "keywords": [
+    "research",
+    "academic-writing",
+    "literature-review",
+    "research-integrity",
+    "design-of-experiments",
+    "degree-research",
+    "undergraduate-thesis",
+    "graduate-research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "学位科研副驾驶",
+    "shortDescription": "有长期状态、阶段闸门与证据约束的本硕博科研工作台",
+    "longDescription": "以 research/project.json 为项目状态唯一源，按学位和课题类型自适应初始化、恢复与迁移，覆盖任务书、开题、中期、实验或实现、分析、论文、预答辩、外审、返修、答辩和归档，并提供状态页、里程碑、周报、会议、AI 使用记录与可执行阶段验证。",
+    "developerName": "Laboratory Research Team",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "我是本科生，请按轻量毕业论文模式帮我完成当前阶段。",
+      "我是硕士生，请从选题开始建立可持续的科研项目档案。",
+      "这是博士研究计划，请建立相互衔接的研究工作包与证据路线。",
+      "按学校模板帮我准备开题报告、技术路线和答辩问题。",
+      "为这个生化课题设计多因素实验、样本量和统计分析计划。"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+# Research repository instructions
+
+## Project stage
+
+- Degree profile: Bachelor / Master / Doctoral / Other.
+- Project track: Literature / Empirical / WetLab / Computational / Engineering / Design / General.
+- Current lifecycle stage: intake / topic / proposal / experiment / execution / analysis / writing / review / defense.
+- `research/project.json` is the canonical project state. Do not infer a conflicting degree, track, discipline, or stage from chat history or generated Markdown.
+- Create only artifacts required by the selected degree, track, and current stage.
+- Resume by running `research-status.ps1`; do not restart the project from chat history alone.
+- Change profile or workflow metadata only with `update-research-project.ps1`. It preserves older track files as history and records the change.
+- Run `validate-stage.ps1` before claiming that a lifecycle stage is complete or advancing to the next one.
+- Record changes to the RQ, endpoint, inclusion criteria, model, analysis, or scope in `research/00-admin/decision-log.md`.
+
+## Evidence and integrity
+
+- Never invent papers, identifiers, quotations, page numbers, data, sample sizes, metrics, p-values, experiments, or tool results.
+- Label material statements as `verified`, `user-provided`, `inference`, `proposal`, or `unresolved`.
+- Treat a search plan as a plan until an actual search export and screening log exist.
+- Attach a stable identifier and claim-level locator to every finalized citation.
+- Preserve raw data and results; write derived artifacts to separate paths.
+- Record environment, data version, seed, command, metric definition, and failures for experiments.
+- Distinguish experimental units, biological/independent repeats, technical repeats, subsamples, repeated measures, clusters, and batches.
+- Freeze confirmatory endpoints and analyses before inspecting confirmatory results; label later analyses exploratory.
+- Treat ethics, biosafety, animal, chemical, clinical, privacy, and facility approvals as explicit evidence fields.
+- Distinguish exploratory from confirmatory analysis and log changes to endpoints or inclusion criteria.
+- Do not send private, patient, embargoed, credential, or unpublished material to external services without explicit authorization.
+- Treat biomedical output as research support, not patient-specific diagnosis or treatment advice.
+- Follow institutional and venue rules for AI-use disclosure.
+
+## Working style
+
+- Use one primary research orchestrator per task and at most one specialist skill.
+- Prefer the simplest valid method; do not impose doctoral complexity or wet-lab artifacts on an undergraduate, literature, engineering, or design project.
+- Prefer project-scoped skills over global installation for large domain packs.
+- Ask before installing or updating third-party skills or running their scripts.
+- Finish with the produced artifact, validation performed, unresolved evidence, and the next gate.
+- Require human approval before final topic selection, confirmatory design freeze, costly/high-risk execution, submission, and defense claims.
+
+## Project commands
+
+- Initialize: `init-research-project.ps1 -Path <project> -Degree <profile> -Track <track>`.
+- Resume/status: `research-status.ps1 -Path <project>`.
+- Update/migrate: `update-research-project.ps1 -Path <project> <changed fields>`.
+- Validate current stage: `validate-stage.ps1 -Path <project>`.
+- Add test, lint, render, and reproducibility commands here.
+- Add canonical data, manuscript, figures, and result paths here.

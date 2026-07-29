@@ -1,0 +1,7 @@
+interface:
+  display_name: "学位科研副驾驶"
+  short_description: "本硕博自适应的选题、研究设计、论文与答辩工作台"
+  default_prompt: "Use $lab-research-router. If this is a new project, initialize its degree and track profile; otherwise read research/project.json with the status script, resume the canonical state, and complete only the next evidence-gated stage."
+
+policy:
+  allow_implicit_invocation: true
