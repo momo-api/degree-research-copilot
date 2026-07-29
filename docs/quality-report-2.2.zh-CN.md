@@ -12,6 +12,8 @@
 |---|---:|---:|
 | 单元/合同测试 | 25/25 | 25/25 |
 | PowerShell 脚本语法解析 | 6/6 | 由测试执行与解压烟雾测试覆盖 |
+| 全新 Git clone（CRLF checkout） | 不适用 | 25/25 |
+| GitHub Actions `windows-latest` | 不适用 | 通过 |
 | Skill `quick_validate.py` | 通过 | 通过 |
 | Plugin `validate_plugin.py` | 通过 | 通过 |
 
@@ -70,10 +72,12 @@ Windows 中文环境需设置 `PYTHONUTF8=1`，否则上游 Python 验证器可�
 
 ## ZIP 完整性
 
-- 文件大小：62,914 bytes
-- SHA-256：`9C5DF49E9CAD0DEF712AB0425DFC1C7B7A16BF46E5C19EB0CB8330EAF451BEB7`
-- 解压烟雾测试目录：`work/package-smoke-2.2-final`
+- 文件大小：62,930 bytes
+- SHA-256：`07F26410B48659F1903FE4FA596A91221DFED0B1E3F66D43E4CBDB6E4DF4325C`
+- 解压烟雾测试目录：`work/package-smoke-2.2-crlf-final`
 - ZIP 顶层：`lab-research-kit`
+
+GitHub Actions 首轮还发现 Profile 头部同步测试只兼容 LF 行尾。已将同步逻辑改为保留 Windows CRLF，并使测试显式兼容 LF/CRLF；全新 clone 和 `windows-latest` CI 随后均通过。
 
 ## 测试没有证明什么
 
