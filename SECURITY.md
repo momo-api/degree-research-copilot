@@ -8,7 +8,7 @@ Only the latest `2.x` release receives security and data-safety fixes.
 
 Do not open a public issue for vulnerabilities involving credential exposure, path traversal, unsafe file mutation, private research data, plugin installation or supply-chain risk.
 
-Use GitHub **Security → Report a vulnerability** for this repository. Include:
+Because this repository is currently private, open a private repository Issue visible only to collaborators, or contact the maintainer through the laboratory's established private channel. If GitHub private vulnerability reporting is enabled after a future public release, prefer **Security → Report a vulnerability**. Include:
 
 - affected version and operating system;
 - exact command or prompt;

@@ -58,7 +58,11 @@ if ($brokenLinks.Count -gt 0) {
 }
 
 $qualityJson = & $testScript -SkillRoot $skillRoot
-if ($LASTEXITCODE -ne 0) { throw 'Plugin quality tests failed.' }
+$qualityExitCode = $LASTEXITCODE
+if ($qualityExitCode -ne 0) {
+    Write-Host ($qualityJson -join [Environment]::NewLine)
+    throw "Plugin quality tests failed with exit code $qualityExitCode."
+}
 $quality = $qualityJson | ConvertFrom-Json
 if ($quality.failed -ne 0) { throw "Plugin quality tests reported $($quality.failed) failure(s)." }
 
